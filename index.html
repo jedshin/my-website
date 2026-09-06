@@ -3,8 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aphirions | Next-Gen Embedded & Edge AI Solutions</title>
+    <title>Aphirions | Premium Audio Systems & Edge AI Engineering</title>
     <style>
+      :root {
+        --bg-color: #0b0f17;
+        --card-bg: #161f2e;
+        --accent-color: #38bdf8;
+        --accent-glow: rgba(56, 189, 248, 0.15);
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --border-color: #1e293b;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -13,86 +23,262 @@
           -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
           Arial, sans-serif;
       }
+
       body {
-        background-color: #0d1117;
-        color: #c9d1d9;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        line-height: 1.6;
         min-height: 100vh;
-        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
-      .container {
-        max-width: 650px;
+
+      header {
+        padding: 2.5rem 2rem 1rem;
         text-align: center;
-        background: #161b22;
-        padding: 40px;
+        max-width: 1100px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .brand-name {
+        font-size: 2.8rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .brand-name span {
+        color: var(--accent-color);
+      }
+
+      .hero-tagline {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        max-width: 750px;
+        margin: 0 auto 1.5rem;
+        font-weight: 300;
+      }
+
+      .badge {
+        display: inline-block;
+        background: var(--accent-glow);
+        color: var(--accent-color);
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        padding: 0.4rem 1.2rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem 3rem;
+        width: 100%;
+      }
+
+      .track-record {
+        background: linear-gradient(135deg, #131c2a 0%, #1a2638 100%);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .track-record h2 {
+        font-size: 1.4rem;
+        color: var(--accent-color);
+        margin-bottom: 0.75rem;
+      }
+
+      .track-record p {
+        color: var(--text-secondary);
+        font-size: 1.05rem;
+        max-width: 850px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        color: var(--text-primary);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
         border-radius: 12px;
-        border: 1px solid #30363d;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease;
       }
-      h1 {
-        color: #58a6ff;
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-        letter-spacing: 1px;
+
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent-color);
       }
-      .subtitle {
-        font-size: 1.1rem;
-        color: #8b949e;
-        margin-bottom: 30px;
-        line-height: 1.5;
+
+      .card-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
       }
-      .tags {
+
+      .card h3 {
+        font-size: 1.25rem;
+        color: var(--text-primary);
+        margin-bottom: 0.75rem;
+      }
+
+      .card p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+      }
+
+      .tag-list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-        margin-bottom: 35px;
+        gap: 0.5rem;
+        margin-top: 1rem;
       }
-      .tag {
-        background-color: #21262d;
-        color: #79c0ff;
-        padding: 6px 14px;
-        border-radius: 20px;
+
+      .tag-list span {
+        background: #0f172a;
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        padding: 0.25rem 0.6rem;
+        border-radius: 4px;
+        border: 1px solid var(--border-color);
+      }
+
+      footer {
+        text-align: center;
+        padding: 2.5rem 2rem;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        background: #080b11;
+      }
+
+      .footer-notice {
+        margin-top: 0.5rem;
         font-size: 0.85rem;
-        font-weight: 600;
-        border: 1px solid #30363d;
+        color: #64748b;
       }
-      .notice {
-        border-top: 1px solid #30363d;
-        padding-top: 25px;
-      }
-      .notice h2 {
-        color: #f0f6fc;
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-      }
-      .notice p {
-        color: #8b949e;
-        font-size: 0.95rem;
+
+      @media (max-width: 768px) {
+        .brand-name {
+          font-size: 2.2rem;
+        }
+        .hero-tagline {
+          font-size: 1.1rem;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>Aphirions</h1>
-      <p class="subtitle">Innovative Embedded & Edge Intelligence Solutions</p>
-
-      <div class="tags">
-        <span class="tag">Embedded Software</span>
-        <span class="tag">Embedded Hardware</span>
-        <span class="tag">TinyML</span>
-        <span class="tag">Small Machine Learning (SML)</span>
+    <header>
+      <div class="brand-name">APHIRIONS<span>.</span></div>
+      <p class="hero-tagline">
+        Specialized Engineering in Audio Systems, Embedded HW/SW Design &
+        On-Device Edge AI
+      </p>
+      <div class="badge">
+        Proven Experience with Top Tier Brands in US & Europe
       </div>
+    </header>
 
-      <div class="notice">
-        <h2>Our Website is Under Construction</h2>
+    <main>
+      <!-- Global Track Record Banner -->
+      <section class="track-record">
+        <h2>Global Design & Engineering Experience</h2>
         <p>
-          We are currently setting up our official platform. Our services and
-          detailed offerings will be launched soon. Stay tuned!
+          Aphirions delivers end-to-end hardware and software architecture for
+          premium audio devices and embedded intelligent systems. Having
+          engineered products for globally renowned audio brands in North
+          America and Europe, we bring world-class quality and performance to
+          every project.
         </p>
+      </section>
+
+      <!-- Core Competencies -->
+      <h2 class="section-title">Core Competencies</h2>
+      <div class="grid">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-icon">🔊</div>
+          <h3>Audio System HW/SW</h3>
+          <p>
+            Turnkey software and hardware design for high-performance soundbars,
+            wireless audio systems, and portable Bluetooth speakers with
+            high-fidelity acoustic tuning and seamless connectivity.
+          </p>
+          <div class="tag-list">
+            <span>Soundbars</span>
+            <span>Bluetooth Speakers</span>
+            <span>DSP Tuning</span>
+            <span>Audio Stack</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <h3>MCU / SoC Design</h3>
+          <p>
+            Expert hardware design and low-level software firmware development
+            spanning multi-architecture MCUs and SoCs, optimized for ultra-low
+            latency, power efficiency, and robust operation.
+          </p>
+          <div class="tag-list">
+            <span>MCU / SoC Firmware</span>
+            <span>Board Design (PCB)</span>
+            <span>RTOS / Linux</span>
+            <span>Power Optimization</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h3>TinyML & SML Solutions</h3>
+          <p>
+            Integrating resource-constrained Machine Learning (TinyML / Small
+            ML) models directly onto MCU/SoC targets for intelligent on-device
+            audio processing, voice enhancement, and edge automation.
+          </p>
+          <div class="tag-list">
+            <span>TinyML</span>
+            <span>SML</span>
+            <span>On-Device AI</span>
+            <span>Keyword Spotting</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
+
+    <footer>
+      <p>&copy; Aphirions. All rights reserved.</p>
+      <p class="footer-notice">
+        Our updated official web platform is under active development and will
+        launch shortly.
+      </p>
+    </footer>
   </body>
 </html>
